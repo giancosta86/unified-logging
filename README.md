@@ -2,6 +2,10 @@
 
 _Universal, minimalist logging for TypeScript_
 
+![GitHub CI](https://github.com/giancosta86/unified-logging/actions/workflows/publish-to-npm.yml/badge.svg)
+[![npm version](https://badge.fury.io/js/@giancosta86%2Funified-logging.svg)](https://badge.fury.io/js/@giancosta86%2Funified-logging)
+[![MIT License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](/LICENSE)
+
 ![Overview](docs/diagrams/overview.png)
 
 The core of **unified-logging** is the `Logger` interface for **TypeScript**, designed to be used in client code - especially libraries - without depending on a specific logging technology.
