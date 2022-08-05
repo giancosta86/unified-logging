@@ -24,7 +24,7 @@
     "clean": "rimraf dist coverage giancosta86-*.tgz",
     "clean:all": "yarn clean && rimraf node_modules",
     "format": "prettier --write .",
-    "prepack": "yarn check-all && yarn build",
+    "prepack": "yarn check-all && yarn build && yarn test:prod",
     "check-all": "yarn check-format && yarn lint && yarn test",
     "check-format": "prettier --check .",
     "lint": "eslint . --ext .js,.ts,.jsx,.tsx,.cjs,.mjs",
