@@ -16,6 +16,8 @@ The core of **unified-logging** is the `Logger` interface for **TypeScript**, de
 npm install @giancosta86/unified-logging
 ```
 
+or
+
 ```bash
 yarn add @giancosta86/unified-logging
 ```
