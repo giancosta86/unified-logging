@@ -22,12 +22,14 @@ or
 yarn add @giancosta86/unified-logging
 ```
 
+The public API entirely resides in the root package index, so you shouldn't reference specific modules.
+
 ## Usage
 
-All the recommended features are exported by the index file - and can be imported as usual:
+Just import names from the package index:
 
 ```typescript
-import {...} from @giancosta86/unified-logging
+import {...} from "@giancosta86/unified-logging"
 ```
 
 ### Logger
@@ -43,6 +45,23 @@ The `Logger` interface provides just a few core methods:
 - `error(message: string)`
 
 This is all you need to start working with the library: for example, you might declare a constructor expecting a `Logger` instance among other options - thus letting clients choose the actual implementation.
+
+For example:
+
+```typescript
+import { Logger } from "@giancosta86/unified-logging";
+
+function doSomething(logger: Logger): void {
+  logger.info("Starting operation...");
+
+  //More code...
+
+  logger.info("Done!");
+}
+
+//Console supports the Logger interface!
+doSomething(console);
+```
 
 ### ArrayLogger
 

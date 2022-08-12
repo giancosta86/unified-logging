@@ -1,6 +1,6 @@
 {
   "name": "@giancosta86/unified-logging",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Universal, minimalist logging for TypeScript",
   "keywords": [
     "universal",
