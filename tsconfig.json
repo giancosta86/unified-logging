@@ -25,7 +25,6 @@
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
 
-    "esModuleInterop": true,
-    "importHelpers": true
+    "esModuleInterop": true
   }
 }
