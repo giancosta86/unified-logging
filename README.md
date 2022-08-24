@@ -10,6 +10,8 @@ _Universal, minimalist logging for TypeScript_
 
 The core of **unified-logging** is the `Logger` interface for **TypeScript**, designed to be used in client code - especially libraries - without depending on a specific logging technology.
 
+Furthermore, this package includes a variety of _utility classes_ that can simplify your logging infrastructure.
+
 ## Installation
 
 ```bash
@@ -66,6 +68,20 @@ doSomething(console);
 ### ArrayLogger
 
 Class implementing `Logger` by storing the received messages into `string[]` fields inspectable via read-only properties - for example, `debugMessages`. Especially useful for testing.
+
+### FilterLogger
+
+`Logger` implementation acting as a filter between the client code and another logger; it is based on the `LogLevel` enum, and is especially useful to add filtering to the global `console` object. For example:
+
+```typescript
+const filteredConsole = new FilterLogger(console);
+
+filteredConsole.logLevel = LogLevel.Warn;
+
+//...some code later...
+
+filteredConsole.info("This will not be displayed!");
+```
 
 ### CompositeLogger
 
