@@ -74,9 +74,7 @@ Class implementing `Logger` by storing the received messages into `string[]` fie
 `Logger` implementation acting as a filter between the client code and another logger; it is based on the `LogLevel` enum, and is especially useful to add filtering to the global `console` object. For example:
 
 ```typescript
-const filteredConsole = new FilterLogger(console);
-
-filteredConsole.logLevel = LogLevel.Warn;
+const filteredConsole = new FilterLogger(console).setLevel(LogLevel.Warn);
 
 //...some code later...
 

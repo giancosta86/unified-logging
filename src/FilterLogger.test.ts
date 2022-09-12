@@ -50,7 +50,7 @@ describe("FilterLogger", () => {
   describe("when setting the log level to Debug", () => {
     it("should log all messages", () => {
       expectLoggerOutput(
-        filterLogger => (filterLogger.logLevel = LogLevel.Debug),
+        filterLogger => filterLogger.setLevel(LogLevel.Debug),
         {
           debug: true,
           info: true,
@@ -63,36 +63,30 @@ describe("FilterLogger", () => {
 
   describe("when setting the log level to Info", () => {
     it("should skip debug messages", () => {
-      expectLoggerOutput(
-        filterLogger => (filterLogger.logLevel = LogLevel.Info),
-        {
-          debug: false,
-          info: true,
-          warn: true,
-          error: true
-        }
-      );
+      expectLoggerOutput(filterLogger => filterLogger.setLevel(LogLevel.Info), {
+        debug: false,
+        info: true,
+        warn: true,
+        error: true
+      });
     });
   });
 
   describe("when setting the log level to Warn", () => {
     it("should skip debug and info messages", () => {
-      expectLoggerOutput(
-        filterLogger => (filterLogger.logLevel = LogLevel.Warn),
-        {
-          debug: false,
-          info: false,
-          warn: true,
-          error: true
-        }
-      );
+      expectLoggerOutput(filterLogger => filterLogger.setLevel(LogLevel.Warn), {
+        debug: false,
+        info: false,
+        warn: true,
+        error: true
+      });
     });
   });
 
   describe("when setting the log level to Error", () => {
     it("should log just error messages", () => {
       expectLoggerOutput(
-        filterLogger => (filterLogger.logLevel = LogLevel.Error),
+        filterLogger => filterLogger.setLevel(LogLevel.Error),
         {
           debug: false,
           info: false,
